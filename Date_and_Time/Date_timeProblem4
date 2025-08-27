@@ -1,0 +1,27 @@
+package Practice;
+import java.time.*;
+import java.time.format.DateTimeFormatter;
+import java.util.Scanner;
+public class Date_timeProblem4 {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		DateTimeFormatter formatter1 = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+		String input1 = sc.next();
+		LocalDate date1 = LocalDate.parse(input1,formatter1);
+		String input2 = sc.next();
+		LocalDate date2 = LocalDate.parse(input2,formatter1);
+		
+		if(date1.isBefore(date2)) {
+			System.out.println("Date1 is before date 2");
+		}
+		else if(date1.isAfter(date2)) {
+			System.out.println("Date1 is after date 2");
+		}
+		else if(date1.isEqual(date2)) {
+			System.out.println("Date1 is equal date 2");
+		}
+		
+	}
+
+}
