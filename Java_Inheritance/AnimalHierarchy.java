@@ -1,1 +1,57 @@
+Package Java_Inheritance;
+class Animal {
+    String name;
+    int age;
+  
+    Animal(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+    void makeSound() {
+        System.out.println("Some generic animal sound...");
+    }
+}
+class Dog extends Animal {
+    Dog(String name, int age) {
+        super(name, age);
+    }
+
+    @Override
+    void makeSound() {
+        System.out.println(name + " (Dog): Woof Woof!");
+    }
+}
+class Cat extends Animal {
+    Cat(String name, int age) {
+        super(name, age);
+    }
+
+    @Override
+    void makeSound() {
+        System.out.println(name + " (Cat): Meow Meow!");
+    }
+}
+class Bird extends Animal {
+    Bird(String name, int age) {
+        super(name, age);
+    }
+
+    @Override
+    void makeSound() {
+        System.out.println(name + " (Bird): Tweet Tweet!");
+    }
+}
+
+public class AnimalHierarchy {
+    public static void main(String[] args) {
+        // Polymorphism: parent reference → child object
+        Animal a1 = new Dog("dog", 3);
+        Animal a2 = new Cat("cat", 2);
+        Animal a3 = new Bird("bird", 1);
+      
+        a1.makeSound(); 
+        a2.makeSound();
+        a3.makeSound();
+    }
+}
 
